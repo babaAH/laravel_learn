@@ -15,9 +15,3 @@ RUN apt-get clean -y
 WORKDIR /home/sadmin/laravel-learn
 
 COPY ./ /home/sadmin/laravel-learn
-RUN composer install --prefer-source --no-interaction 
-
-
-CMD ["php-fpm"]
-
-EXPOSE 9000
