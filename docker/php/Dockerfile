@@ -12,7 +12,6 @@ RUN apt-get install curl && \
 
 RUN apt-get clean -y
 
-MKDIR laravel-learn
 WORKDIR /home/sadmin/laravel-learn
 
 COPY ./ /home/sadmin/laravel-learn
