@@ -10,12 +10,14 @@ RUN apt-get install curl && \
 	curl -s https://getcomposer.org/installer | php && \
 	mv composer.phar /usr/local/bin/composer
 
+RUN apt-get clean -y
+
 WORKDIR /home/sadmin/
-
-
-EXPOSE 9000:9000
-
-COPY ../../../:./
 
 RUN cd laravel_learn
 RUN composer install --prefer-source --no-interaction 
+
+
+CMD ["php-fpm"]
+
+EXPOSE 9000

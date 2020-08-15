@@ -9,13 +9,14 @@ services:
       - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
       - ./public:/home/sadmin/laravel_learn/public/web
 
-  # mysql:
-  #   image: mysql:5.7.29
-  #   ports:
-  #     - 3306:3306
-  #   environment:
-  #     MYSQL_ROOT_PASSWORD: example
-
+  mysql:
+    image: mysql:5.7.29
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    volumes: 
+      - dbdata:/var/lib/mysql
   php:
     build: ./docker/php
     # ports:
@@ -23,3 +24,6 @@ services:
     volumes:
       - ./:/home/sadmin/laravel_learn
     working_dir: /home/sadmin/laravel_learn
+
+volumes:
+  dbdata
