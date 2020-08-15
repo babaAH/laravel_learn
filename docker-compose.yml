@@ -17,10 +17,11 @@ services:
       MYSQL_ROOT_PASSWORD: example
     volumes: 
       - dbdata:/var/lib/mysql
+      
   php:
     build: ./docker/php
-    # ports:
-    #   - 9000:9000
+    ports:
+      - 9000:9000
     volumes:
       - ./:/home/sadmin/laravel_learn
     working_dir: /home/sadmin/laravel_learn

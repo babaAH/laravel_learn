@@ -14,9 +14,8 @@ RUN apt-get install curl && \
 RUN apt-get clean -y
 
 
-COPY ./ /home/sadmin/laravel-learn
 
+EXPOSE 9000
 
 CMD ["php-fpm"]
 
-EXPOSE 9000
