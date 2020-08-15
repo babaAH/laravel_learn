@@ -14,7 +14,7 @@ RUN apt-get clean -y
 
 WORKDIR /home/sadmin/
 
-
+COPY ./ /home/sadmin/laravel-learn
 RUN composer install --prefer-source --no-interaction 
 
 
