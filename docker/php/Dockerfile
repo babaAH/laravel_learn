@@ -1,5 +1,6 @@
 FROM php:7.4.5-fpm
 
+
 RUN apt-get update && apt-get install -y libpq-dev git zip unzip && apt-get clean 
 
 
@@ -15,7 +16,6 @@ RUN apt-get clean -y
 WORKDIR /home/sadmin/laravel-learn
 
 COPY ./ /home/sadmin/laravel-learn
-RUN composer install
 
 
 CMD ["php-fpm"]
