@@ -14,7 +14,7 @@ RUN apt-get clean -y
 
 WORKDIR /home/sadmin/
 
-RUN cd laravel_learn
+
 RUN composer install --prefer-source --no-interaction 
 
 
