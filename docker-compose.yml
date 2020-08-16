@@ -14,8 +14,8 @@ services:
     ports:
       - 3306:3306
     environment:
-      - MYSQL_DATABASE:laravel
-      - MYSQL_ROOT_PASSWORD:R3c)nR3c)v
+      MYSQL_DATABASE: laravel
+      MYSQL_ROOT_PASSWORD: R3c)nR3c)v
     # volumes: 
     #   - dbdata:/var/lib/mysql
 
