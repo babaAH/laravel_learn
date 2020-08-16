@@ -13,7 +13,7 @@ RUN apt-get install curl && \
 
 RUN apt-get clean -y
 
-
+RUN php artisan migrate
 
 EXPOSE 9000
 
