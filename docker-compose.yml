@@ -27,5 +27,5 @@ services:
       - ./:/home/sadmin/laravel_learn
     working_dir: /home/sadmin/laravel_learn
 
-# volumes:
-#   dbdata:
+volumes:
+  dbdata:
