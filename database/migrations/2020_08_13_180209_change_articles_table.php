@@ -17,7 +17,7 @@ class ChangeArticlesTable extends Migration
             
             Schema::table('articles', function (Blueprint $table) {
                 
-                if(!Schema::hasColumn('alias')){ 
+                if(!Schema::hasColumn('articles','alias')){ 
                     $table->string('alias', 100)->default('default');
                 }
 
