@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use \App\Article;
+use \App\Country;
+use \App\User;
+use \App\Role;
 
 use DB;
 
@@ -16,6 +19,33 @@ class Core extends Controller
 
     //list materials
     public function getArticles(){
+
+        $role = Role::find(1);
+
+        // dump($user);
+        $users = $role->users;
+        dump($users[0]->name);
+
+        return ;
+
+        // $article = Article::create([
+        //     'name' => 'Hello world',
+        //     'text' => 'Some text',
+        //     'img'  => 'Some img',
+        // ]);
+
+        // $article = Article::firstOrCreate([
+        //     'name' => 'Hello',
+        //     'text' => 'Hello',
+        //     'img' => 'Hello',
+        // ]);
+
+        // $article = Article::firstOrNew([
+        //     'name' => 'HelloName1S',
+        //     'text' => 'HelloText',
+        //     'img'  => 'HelloImg',
+        // ]);        
+
         // $articles = Article::where('id', '>' , 3)->orderBy('name')->get();
 
         // Article::chunk(2, function(){
@@ -30,16 +60,16 @@ class Core extends Controller
         // $article->img  = "new Model Object";
 
         // $article->save();
-        $article = Article::findOrFail(1);
+        // $article = Article::findOrFail(1);
             
-        dump ($article);
+        // dump ($article);
         
-        $article->name = "updated model name field";
-        $article->save();
+        // $article->name = "updated model name field";
+        // $article->save();
 
-        dump ($article);
+        // dump ($article);
 
-
+        // return;
 
 
         // DB::table('articles')->orderBy('id')->chunk(4, function($articles){
