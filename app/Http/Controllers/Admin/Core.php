@@ -20,13 +20,24 @@ class Core extends Controller
     //list materials
     public function getArticles(){
 
-        $role = Role::find(1);
+        $article = Article::find(1);
+        $article->name = 'Some text123';
+        $arr = ["asdasd", "zxczxczcx", "123123123"];
+        $article->text = $arr;
+        $article->save();
 
-        // dump($user);
-        $users = $role->users;
-        dump($users[0]->name);
 
-        return ;
+        dump($article->toArray());
+        // dump($article->text);
+        // die();
+
+        // $role = Role::find(1);
+
+        // // dump($user);
+        // $users = $role->users;
+        // dump($users[0]->name);
+
+        // return ;
 
         // $article = Article::create([
         //     'name' => 'Hello world',
