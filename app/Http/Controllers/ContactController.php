@@ -12,8 +12,20 @@ class ContactController extends Controller
     //     $this->request = $request;
     // }
 
-    public function show(Request $request, $id=null){
-        
+    public function show(Request $request, $id=null)
+    {    
+        if($request->isMethod('post')){
+            $rules = [
+                'email' => 'required|email',
+                'password' => 'required|confirmed|min:6|max:128',
+                'city' => 'required|string'
+            ];
+
+            $this->validate($request, $rules);
+            dump($request->all());
+            
+
+        }
         return view('default.contact', ['title' => 'Контакты', 'request' => $request]);
     }
 }
