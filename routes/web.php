@@ -38,7 +38,7 @@ Route::get('/page/{id}/{cat}', function ($id, $cat=null) {
     echo $id . " " . $cat;
     // return view('page');
 })->where(
-    ['id'  =>'[0-9]+'], 
+    ['id'  =>'[0-9]+'],
     ['cat' =>'[A-Za-z]+']
 );
 
@@ -51,20 +51,25 @@ Route::middleware(['mymiddle'])->group(function(){
 // Route::group(['prefix' => 'admin'], function () {
 
 
-    
+
 // })->middleware('web');
 
 Route::get('/about/', 'AboutController@show')
     ->name('about');
 
-Route::match(['get', 'post'],'/contact/', 'ContactController@show')
+Route::get('/contact/', 'ContactController@show')
     ->name('contact');
+
+Route::post('/contact/', 'ContactController@store');
+    // ->name('contact');
+// Route::match(['get', 'post'],'/contact/', 'ContactController@show')
+    // ->name('contact');
 
 Route::get('/about/{id}', 'FirstController@show');
 
 Route::get('/articles', 'Admin\Core@getArticles')
     ->name('articles');
-    
+
 
 
 Route::get('/articles/{page}', 'Admin\Core@getArticle')
