@@ -35,8 +35,23 @@ class ContactController extends Controller
         return view('default.contact', ['title' => 'Контакты', 'request' => $request]);
     }
 
-    public function store(ContactRequest $request)
+    public function store(Request $request)
     {
-        //todo
+        if($request->isMethod('post')){
+            $messages = [
+                'required' => 'Поле :attribute обязательно к заполнению',
+            ];
+
+            $validator = Validator::make($request->all(), [
+                'email' => 'required'
+            ], $messages);
+
+            if($validator->fails()){
+                $messages = $validator->errors();
+                dump($messages);
+                //return redirect()->route('contact')->withErrors($validator)->withInput();
+            }
+        }
+        return view('default.contact', ['title' => 'Контакты', 'request' => $request]);
     }
 }

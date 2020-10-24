@@ -31,7 +31,9 @@ class ContactRequest extends FormRequest
     public function messages()
     {
         return[
-
+            'required' => 'Поле :attribute обязательно к заполнению',
+            'max' => 'Максимально допустимое количество символов - :max',
+            'email' => 'Введите валидный email',
         ];
     }
 }
